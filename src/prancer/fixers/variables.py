@@ -48,15 +48,15 @@ class VariableFixer(object):
         self.NUM_NOISE_CHAR = 5
 
         # Path to lyric file resource
-        self.SOUNDS_FILE = resource_filename(__name__, "../resources/sounds.txt")
+        self.NAMES_FILE = resource_filename(__name__, "../resources/ponynames.txt")
 
-        # Load sounds which "enhance" original variable names here
-        self.SOUNDS = None
-        with open(self.SOUNDS_FILE, 'r') as f:
-            self.SOUNDS = f.readlines()
+        # Load ponynames which "enhance" original variable names here
+        self.NAMES = None
+        with open(self.NAMES_FILE, 'r') as f:
+            self.NAMES = f.readlines()
 
         # Number of Sounds
-        self.NUM_SOUNDS = len(self.SOUNDS)
+        self.NUM_NAMES = len(self.NAMES)
 
     def _get_random_noise(self) -> str:
         """[summary]
@@ -82,26 +82,26 @@ class VariableFixer(object):
 
         return noise
 
-    def _get_random_animal_sound(self) -> str:
+    def _get_random_pony_names(self) -> str:
         """[summary]
-        returns a random animal sound like "bark_bark" etc.
+        returns a random pony name like "bark_bark" etc.
         [description]
-        We read the animal sounds from /resource/sounds.txt
+        We read the pony names from /resource/ponynames.txt
         """
 
-        # Grab a random line from our nice sounds
-        random_index = random.randint(0, self.NUM_SOUNDS - 1)
+        # Grab a random line from our nice ponynames
+        random_index = random.randint(0, self.NUM_NAMES - 1)
 
-        # get random sound and strip whitespaces
-        sound = self.SOUNDS[random_index].rstrip()
+        # get random ponynames and strip whitespaces
+        ponynames = self.NAMES[random_index].rstrip()
 
-        # repeat sound up to 2 times
-        sound_list = [sound] * random.randint(1, 3)
+        # repeat ponynames up to 2 times
+        ponynames_list = [ponynames] * random.randint(1, 3)
 
         # join them to one string
-        sound = "_".join(sound_list) + "_"
+        ponynames = "_".join(ponynames_list) + "_"
 
-        return sound
+        return ponynames
 
     def _get_new_name(self, input_name: str):
 
@@ -114,11 +114,11 @@ class VariableFixer(object):
             # Generate new name
             ###
 
-            sounds = self._get_random_animal_sound()
+            ponynames = self._get_random__pony_names()
             noise = self._get_random_noise()
 
             # combine to generate variable name
-            name = sounds + noise
+            name = ponynames + noise
 
             # save to dict
             self.dict[input_name] = name
