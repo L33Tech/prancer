@@ -27,8 +27,6 @@ class CommentFixer(object):
     def __init__(self):
         super(CommentFixer, self).__init__()
         
-        # Number of lines
-        self.NUM_LINES = len(self.LINES)
         # Path to lines file resource
         self.LINE_FILE = resource_filename(__name__, "resources/lines.txt")
 
@@ -36,6 +34,9 @@ class CommentFixer(object):
         self.LINES = None
         with open(self.LINE_FILE, 'r') as f:
             self.LINES = f.readlines()
+            
+        # Number of lines
+        self.NUM_LINES = len(self.LINES)
 
         # setting name
         self.__name__ = "CommentFixer"
