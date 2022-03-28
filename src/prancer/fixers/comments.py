@@ -21,7 +21,7 @@ class CommentFixer(object):
     ones with its own.
 
     Methods:
-        fix(file) - takes file and returns the fixed "file.lanced"
+        fix(file) - takes file and returns the fixed "file.pranced"
     """
 
     def __init__(self):
@@ -53,7 +53,7 @@ class CommentFixer(object):
     @fix_wrapper
     def fix(self, tokens):
         """After decoration, it will take the file that you want to fix and
-        create a fixed .lanced file.
+        create a fixed .pranced file.
 
         BEFORE DECORATION: takes a list of tokens and returns
         a list of the fixed tokens.

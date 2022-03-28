@@ -53,12 +53,12 @@ def fix_wrapper(fix_method):
         # Saving file name
         self.FILE_NAME = Path(in_file).stem
 
-        # check if input file is a python file or lanced python file
-        if self.FILE_PATH.suffix not in [".py", ".lanced"]:
-            raise ValueError("File needs to be .py or .lanced")
+        # check if input file is a python file or a pranced python file
+        if self.FILE_PATH.suffix not in [".py", ".pranced"]:
+            raise ValueError("File needs to be .py or .pranced")
 
         # (temporary) output file
-        out_file = (path.parent / path.name).with_suffix(".lanced")
+        out_file = (path.parent / path.name).with_suffix(".pranced")
 
         with open(in_file, "r") as file:
 

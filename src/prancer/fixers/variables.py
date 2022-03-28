@@ -22,7 +22,7 @@ class VariableFixer(object):
     substituting them with its own BAD ones.
 
     Methods:
-        fix(file) - takes file and returns the fixed "file.lanced"
+        fix(file) - takes file and returns the fixed "file.pranced"
 
     Todo:
         Fix annotation compatability

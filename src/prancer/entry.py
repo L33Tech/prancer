@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Then run `python setup.py install` which will install the command `lance`
+Then run `python setup.py install` which will install the command `prance`
 inside your current environment.
 """
 
@@ -41,7 +41,7 @@ def parse_args(args):
         "-f",
         "--file",
         dest="file",
-        help="Python file to be lance'd.",
+        help="Python file to be prance'd.",
         type=Path,
         action="store",
         required=True,
@@ -66,16 +66,16 @@ def setup_logging(loglevel):
                         format=logformat, datefmt="%Y-%m-%d %H:%M:%S")
 
 
-def lance(file : Path = "./file.py", yolo : bool = False):
+def prance(file : Path = "./file.py", yolo : bool = False):
     """[summary]
-    Takes a file and lances it.
+    Takes a file and prances it.
 
     [description]
     Turns our code into the most horrendous mess imaginable.
     Seriously.
 
     Keyword Arguments:
-        file {Path} -- File to be lanced (default: {"./file.py"})
+        file {Path} -- File to be pranced (default: {"./file.py"})
         yolo {bool} -- Overwrites original if true (default: {False})
     """
     # turn file into path if not already
@@ -107,7 +107,7 @@ def main(args):
     """
     args = parse_args(args)
 
-    lance(file=args.file, yolo=args.yolo)
+    prance(file=args.file, yolo=args.yolo)
 
 
 def run():
