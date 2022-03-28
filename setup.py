@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-    Setup file for lancer.
+    Setup file for prancer.
     Use setup.cfg to configure your project.
 
 """

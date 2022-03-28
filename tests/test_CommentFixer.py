@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from lancer.fixers.comments import CommentFixer
+from prancer.fixers.comments import CommentFixer
 from pathlib import Path
 
 __author__ = "Levi Borodenko"

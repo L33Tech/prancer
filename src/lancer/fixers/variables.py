@@ -2,7 +2,7 @@ import logging
 from tokenize import NAME, NL, DEDENT, INDENT
 from itertools import tee
 import random
-from lancer.utils import fix_wrapper, window, isbuildin
+from prancer.utils import fix_wrapper, window, isbuildin
 import pkg_resources
 
 # import pkg_resources

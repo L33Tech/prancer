@@ -1,8 +1,8 @@
 ======
-lancer
+prancer
 ======
 
-This is the documentation of **lancer**.
+This is the documentation of **prancer**.
 
 .. note::
 

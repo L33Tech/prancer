@@ -1,7 +1,7 @@
 import logging
 from tokenize import COMMENT
 from random import randint
-from lancer.utils import fix_wrapper
+from prancer.utils import fix_wrapper
 import pkg_resources
 
 __author__ = "Levi Borodenko"

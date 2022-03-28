@@ -8,12 +8,12 @@ import argparse
 import sys
 import logging
 from pathlib import Path
-from lancer.utils import copy_and_delete
+from prancer.utils import copy_and_delete
 
-from lancer.fixers.comments import CommentFixer
-from lancer.fixers.variables import VariableFixer
+from prancer.fixers.comments import CommentFixer
+from prancer.fixers.variables import VariableFixer
 
-from lancer import __version__
+from prancer import __version__
 
 __author__ = "Levi Borodenko"
 __copyright__ = "Levi Borodenko"
@@ -36,7 +36,7 @@ def parse_args(args):
     parser.add_argument(
         "--version",
         action="version",
-        version="lancer {ver}".format(ver=__version__))
+        version="prancer {ver}".format(ver=__version__))
     parser.add_argument(
         "-f",
         "--file",

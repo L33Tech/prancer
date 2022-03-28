@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from lancer.fixers.variables import VariableFixer
+from prancer.fixers.variables import VariableFixer
 
 __author__ = "Levi Borodenko"
 __copyright__ = "Levi Borodenko"
