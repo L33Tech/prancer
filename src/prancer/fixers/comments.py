@@ -2,7 +2,7 @@ import logging
 from tokenize import COMMENT
 from random import randint
 from prancer.utils import fix_wrapper
-import pkg_resources
+from pkg_resources import resource_filename
 
 __author__ = "Levi Borodenko"
 __copyright__ = "Levi Borodenko"
@@ -28,11 +28,19 @@ class CommentFixer(object):
         super(CommentFixer, self).__init__()
 
         # Path to lines file resource
-        self.LINE_FILE = pkg_resources.resource_filename(
-            __name__, "../resources/lines.txt")
 
         # Number of lines
         self.NUM_LINES = sum(1 for line in open(self.LINE_FILE))
+        # Path to lyric file resource
+        self.LINE_FILE = resource_filename(__name__, "resources/lines.txt")
+
+        # Load lyrics which replace original comments here
+        self.LYRICS = None
+        with open(self.LINE_FILE, 'r') as f:
+            self.LINES = f.readlines()
+
+        # Number of lyrics
+        self.NUM_LINES = len(self.LINES)
 
         # setting name
         self.__name__ = "CommentFixer"
@@ -41,15 +49,11 @@ class CommentFixer(object):
         """Returns a random line from My Little Pony.
         """
 
-        # Open lines file and grab a random line
-        with open(self.LINE_FILE) as f:
+        # Grab a random line from our lines
+        random_index = randint(0, self.NUM_LINES - 1)
 
-            random_index = randint(0, self.NUM_LINES - 1)
-
-            lines = f.readlines()
-
-            # .rstrip to remove trailing whitespace
-            return "# " + lines[random_index].rstrip()
+        # .rstrip to remove trailing whitespace
+        return "# " + self.LINES[random_index].rstrip()
 
     @fix_wrapper
     def fix(self, tokens):
