@@ -114,7 +114,7 @@ class VariableFixer(object):
             # Generate new name
             ###
 
-            ponynames = self._get_random__pony_names()
+            ponynames = self._get_random_pony_names()
             noise = self._get_random_noise()
 
             # combine to generate variable name
