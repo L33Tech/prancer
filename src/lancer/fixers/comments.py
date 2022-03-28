@@ -27,31 +27,29 @@ class CommentFixer(object):
     def __init__(self):
         super(CommentFixer, self).__init__()
 
-        # Path to lyric file resource
-        self.LYRIC_FILE = pkg_resources.resource_filename(
-            __name__, "../resources/lyrics.txt")
+        # Path to lines file resource
+        self.LINE_FILE = pkg_resources.resource_filename(
+            __name__, "../resources/lines.txt")
 
-        # Number of lyrics
-        self.NUM_LYRICS = sum(1 for line in open(self.LYRIC_FILE))
+        # Number of lines
+        self.NUM_LINES = sum(1 for line in open(self.LINE_FILE))
 
         # setting name
         self.__name__ = "CommentFixer"
 
     def _get_lyric(self) -> str:
-        """Returns a random song lyric.
-
-        Gives one of many insightful Pitbull quotes.
+        """Returns a random line from My Little Pony.
         """
 
-        # Open lyrics file and grab a random line
-        with open(self.LYRIC_FILE) as f:
+        # Open lines file and grab a random line
+        with open(self.LINE_FILE) as f:
 
-            random_index = randint(0, self.NUM_LYRICS - 1)
+            random_index = randint(0, self.NUM_LINES - 1)
 
-            lyrics = f.readlines()
+            lines = f.readlines()
 
             # .rstrip to remove trailing whitespace
-            return "# " + lyrics[random_index].rstrip()
+            return "# " + lines[random_index].rstrip()
 
     @fix_wrapper
     def fix(self, tokens):
