@@ -28,7 +28,7 @@ class CommentFixer(object):
         super(CommentFixer, self).__init__()
         
         # Path to lines file resource
-        self.LINE_FILE = resource_filename(__name__, "resources/lines.txt")
+        self.LINE_FILE = resource_filename(__name__, "../resources/lines.txt")
 
         # Load lines which replace original comments here
         self.LINES = None
