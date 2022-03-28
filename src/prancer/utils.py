@@ -78,8 +78,8 @@ def fix_wrapper(fix_method):
         result = untokenize(result_tokens).decode('utf-8')
 
         # print resulting script to out_file
-        with open(out_file, "w+") as file:
-            print(result, file=file, end="")
+        with open(out_file, "wb") as file:
+            file.write(result.encode())
 
         # add pointer to outfile to self.
         self.__output__ = out_file
