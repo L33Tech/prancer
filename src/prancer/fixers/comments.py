@@ -26,21 +26,16 @@ class CommentFixer(object):
 
     def __init__(self):
         super(CommentFixer, self).__init__()
-
-        # Path to lines file resource
-
+        
         # Number of lines
-        self.NUM_LINES = sum(1 for line in open(self.LINE_FILE))
-        # Path to lyric file resource
+        self.NUM_LINES = len(self.LINES)
+        # Path to lines file resource
         self.LINE_FILE = resource_filename(__name__, "resources/lines.txt")
 
-        # Load lyrics which replace original comments here
-        self.LYRICS = None
+        # Load lines which replace original comments here
+        self.LINES = None
         with open(self.LINE_FILE, 'r') as f:
             self.LINES = f.readlines()
-
-        # Number of lyrics
-        self.NUM_LINES = len(self.LINES)
 
         # setting name
         self.__name__ = "CommentFixer"
