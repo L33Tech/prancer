@@ -69,14 +69,14 @@ class CommentFixer(object):
         result = []
 
         # iterating over tokens
-        for token_type, token_val, _, _, _, in tokens:
+        for token_type, token_val, start, end, line, in tokens:
 
             # if token is a comment, substitute with a random lyric comment.
             if token_type == COMMENT:
                 result.append(
-                    (COMMENT, self._get_lyric())
+                    (COMMENT, self._get_lyric(), start, end, line)
                 )
 
             else:
-                result.append((token_type, token_val))
+                result.append((token_type, token_val, start, end, line))
         return result

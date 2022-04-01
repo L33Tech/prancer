@@ -1,12 +1,13 @@
 from io import BytesIO
 from functools import wraps
 from pathlib import Path
-from tokenize import tokenize, untokenize
+from tokenize import tokenize
 import sys
 import logging
 from collections import deque
 from keyword import iskeyword
 from shutil import copy2 as copy
+from untokenize import untokenize
 
 
 __author__ = "Levi Borodenko"
@@ -75,7 +76,7 @@ def fix_wrapper(fix_method):
         result_tokens = fix_method(self, tokens)
 
         # converting back to string
-        result = untokenize(result_tokens).decode('utf-8')
+        result = untokenize(result_tokens)#.decode('utf-8')
 
         # print resulting script to out_file
         with open(out_file, "wb") as file:
