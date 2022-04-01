@@ -11,7 +11,6 @@ from pathlib import Path
 from prancer.utils import copy_and_delete
 
 from prancer.fixers.comments import CommentFixer
-from prancer.fixers.variables import VariableFixer
 
 from prancer import __version__
 
@@ -82,7 +81,6 @@ def prance(file : Path = "./file.py", yolo : bool = False):
     file = Path(file)
 
     # initiate "fixers"
-    variabel_fixer = VariableFixer()
     comment_fixer = CommentFixer()
 
     # first fix comments
@@ -90,9 +88,6 @@ def prance(file : Path = "./file.py", yolo : bool = False):
 
     # get the output file
     fixed_file = comment_fixer.__output__
-
-    # applying variable fixer
-    variabel_fixer.fix(fixed_file)
 
     # if yolo mode is true, substitute original
     if yolo:

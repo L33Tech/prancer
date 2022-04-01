@@ -4,9 +4,8 @@ A tool to turn your clean python code into a hideous (working) mess.
 
 ## Features
 1. Turn all comments into lines from My Little Pony.
-2. Turn all your variable names into a mixture of pony names and horribly similar looking characters like "Twilight_Dash_0OO0O".
-3. Add irritating white spaces.
-4. Code still runs after all these _improvements_! 👷
+2. Add irritating white spaces.
+3. Code still runs after all these _improvements_! 👷
 
 
 ## Example
@@ -55,7 +54,7 @@ optional arguments:
 So if you have a python file at `./test.py`, you simply run `prance -f ./test.py`
 
 ## How does it work
-The key tool we use it the `tokenizer` standard module in python. It allows us to tokenize any python script which then in turn makes substituting comments and variable names fairly simple.
+The key tool we use it the `tokenizer` standard module in python. It allows us to tokenize any python script which then in turn makes substituting comments fairly simple.
 Check out the source code for more details. 
 
 ## Contribute
