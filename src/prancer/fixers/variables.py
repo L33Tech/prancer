@@ -25,7 +25,7 @@ class VariableFixer(object):
         fix(file) - takes file and returns the fixed "file.pranced"
 
     Todo:
-        Fix annotation compatability
+        Fix annotation compatibility
     """
 
     def __init__(self):
@@ -225,7 +225,7 @@ class VariableFixer(object):
         result = []
 
         # iterating over tokens
-        for token_type, token_val, _, _, _, in tokens:
+        for token_type, token_val, start, end, line, in tokens:
 
             # if token is a Name, substitute from dict.
             if token_type == NAME:
@@ -234,17 +234,17 @@ class VariableFixer(object):
 
                     # try to get name
                     new_name = self.dict[token_val]
-                    result.append((NAME, new_name))
+                    result.append((NAME, new_name, start, end, line))
 
                 except KeyError:
 
                     # if name not collected
                     # leave it as is.
-                    result.append((NAME, token_val))
+                    result.append((NAME, token_val, start, end, line))
 
             # if not a name, append as is.
             else:
-                result.append((token_type, token_val))
+                result.append((token_type, token_val, start, end, line))
 
         return result
 
